@@ -29,7 +29,7 @@ options:
 
 If no arguments are specified, it'll open the UI.
 
-For bash, you can use `date-normalizer`, which is just a shortcut for `python main.py`; `date_normalizer.exe` works from terminal too.
+For bash, you can use `date-normalizer`, which is just a shortcut for `python main.py`.
 
 ## User Interface
 
@@ -57,7 +57,7 @@ To create the executable, follow these steps:
 
     - `--noconfirm`: Skip confirmation prompts.
     - `--onefile`: Bundle the executable into a single file.
-    - `--windowed`: Run the application without a console window.
+    - `--windowed`: Run the application without a console window, use `--console` for it to work from a terminal.
     - `--name "date_normalizer"`: Set the name of the executable.
     - `--icon "icon.ico"`: Set the icon for the executable.
     - `--add-data "icon.ico:."`: Include the icon file in the executable.
