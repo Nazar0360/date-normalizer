@@ -1,4 +1,5 @@
 from pyperclip import copy, paste
+from tkinter import PhotoImage
 from date_functions import *
 import customtkinter as ctk
 from datetime import date
@@ -11,9 +12,14 @@ class DateNormalizeTool(ctk.CTk):
         self.title("date-normalizer")
         self.resizable(False, False)
         script_directory = os.path.dirname(os.path.abspath(__file__))
-        icon_path = os.path.join(script_directory, 'icon.ico')
-        self.iconbitmap(icon_path)
-
+        if os.name == "nt":
+            icon_path = os.path.join(script_directory, 'icon.ico')
+            self.iconbitmap(icon_path)
+            self._icon = None
+        else:
+            icon_path = os.path.join(script_directory, "icon.png")
+            self._icon = PhotoImage(file=icon_path)
+            self.iconphoto(True, self._icon)
         self.entry_names = ["Year", "Month", "Day", "Hour", "Minute", "Second"]
         self.input_entries = {}
         self.normalized_entries = {}
